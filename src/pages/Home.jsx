@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 
 export default function(){
     return (
-            <main>
+        <main>
             <div className="menu_laterale">
                 <div>Profile</div>
                 <div>Sidebar</div>
@@ -15,7 +15,6 @@ export default function(){
                     <section>Add Post</section>
                     <section>Post</section>
                 </div>
-
             </div>   
         </main>
     )
