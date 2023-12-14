@@ -1,0 +1,34 @@
+main{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid blue;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.menu_laterale{
+    border: 3px solid orange;
+    width: 200px;
+}
+
+.centrale{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100vw - 200px);
+}
+
+nav{
+    border: 3px solid red;
+    height: 80px;
+    width: 100%;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid purple;
+    width: 100%;
+    max-width: 1400px;
+}
