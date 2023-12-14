@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainPostContainer{
+  border: 1px solid black;
+}
+
+.headerPostContainer{
+  display: flex;
+  
+}

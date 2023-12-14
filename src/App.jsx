@@ -1,5 +1,11 @@
+import PostContainer from './components/post-container/PostContainer';
+
 function App() {
-  return <h1>Component Placeholder</h1>
+  return (
+    <div>
+      <PostContainer />
+    </div>
+  );
 }
 
-export default App
+export default App;
