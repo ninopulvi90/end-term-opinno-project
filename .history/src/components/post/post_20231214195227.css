@@ -77,7 +77,7 @@ img {
   cursor: pointer;
   transition: transform .3s ease-in-out;
   border-radius: 10rem;
-  /* background-color: transparent; */
+  
 }
 
 #closeIcon:hover {

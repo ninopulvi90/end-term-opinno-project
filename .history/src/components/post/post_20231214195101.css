@@ -73,11 +73,11 @@ img {
 /*ICONS-SVG*/
 
 #closeIcon {
-  padding: .2rem;
+  padding: .5rem;
   cursor: pointer;
-  transition: transform .3s ease-in-out;
+  transition: transform .5s ease-in-out;
   border-radius: 10rem;
-  /* background-color: transparent; */
+  background-color: transparent;
 }
 
 #closeIcon:hover {

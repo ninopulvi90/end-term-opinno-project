@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
+import Axios from 'axios';
+
 import Post from '../post/Post';
 
 export default function PostContainer() {
+  
+  const POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
+  
   const postsArr = [
     {
       userId: 1,
@@ -16,6 +21,13 @@ export default function PostContainer() {
       body: 'wewe',
     },
   ];
+
+  useEffect(()=>{
+
+    Axios
+
+  }
+  ,[]);
 
   return (
     <ul>

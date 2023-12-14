@@ -3,7 +3,7 @@ import GlobalIcon from './GlobalIcon';
 import './post.css';
 
 export default function Post(props) {
-  //console.log(props);
+  console.log(props);
   return (
     <li className="mainPostContainer">
       <div className="headerPostContainer">
@@ -34,7 +34,7 @@ export default function Post(props) {
           {props.post.body}
         </p>
         <div>
-          <img src={props.post.img} alt="post-image"></img>
+          <img src="https://picsum.photos/1000/800" alt="post-image"></img>
         </div>
       </div>
     </li>
