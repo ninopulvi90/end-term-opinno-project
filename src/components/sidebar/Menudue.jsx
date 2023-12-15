@@ -10,7 +10,7 @@ function Menudue() {
 
   return (
     <div className="bg-gray-100   shadow-md w-64 flex-col">
-      <h3 className="text-xl text-center border font-semibold mb-4">
+      <h3 className="text-xl text-center border-y-2	 font-semibold mb-4">
         Partecipa a nuove missioni
       </h3>
       <ul className="flex-col space-x-4">

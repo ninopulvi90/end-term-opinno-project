@@ -1,11 +1,11 @@
 import Profile from "./Profile";
 import Menu from "./Menu";
 import Menudue from "./Menudue";
-import Footer from "../Footer"
+import Footer from "../Footer";
 
 export default function Sidebar() {
   return (
-    <nav className="bg-slate-600 w-64">
+    <nav className="">
       <Profile />
       <Menu />
       <Menudue />
