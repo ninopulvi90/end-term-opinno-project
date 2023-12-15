@@ -32,15 +32,17 @@ const getData = (
   errorHandler = defaultErrorHandler,
   responseHandler = defaultResponseHandler
 ) => {
-  let url = `${baseUrl}/${endPoint}`;
+  let url = `${baseUrl}${endPoint}`;
 
   if (id) {
-    console.log('ID => ' + id)
-    url + `?postId=${id}`;
+    console.log('ID => ' + id);
+    url = url + `?postId=${id}`;
+    console.log('URL => ' + url);
   }
 
   Axios.get(url)
     .then((response) => {
+      console.log('RESPONSE-HANDLER BEGINS...');
       responseHandler(response, callBack);
     })
     .catch((error) => {
@@ -54,6 +56,7 @@ const gateway = {
       jsonplaceholderBaseUrl,
       '/posts',
       callback,
+      null,
       errorHandler,
       responseHandler
     );

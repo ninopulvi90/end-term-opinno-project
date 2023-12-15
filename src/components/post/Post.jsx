@@ -9,14 +9,16 @@ import './close-icon.css';
 import gateway from '../../network/Gateway';
 
 export default function Post(props) {
-  // const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([]);
   // const [isCommentLoaded, setIsCommentLoaded] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
   const [isPostOpened, setIsPostOpened] = useState(true);
 
-  // useEffect(() => {
-  //   gateway.getPostComments(setComments, props.post.id);
-  //   console.log(comments);
+  useEffect(() => {
+ 
+    gateway.getPostComments(setComments, props.post.id);
+    console.log(comments);
+  },[]);
   // }, [isCommentLoaded]);
 
   const showDetail = function (index) {
@@ -48,7 +50,7 @@ export default function Post(props) {
                 <img src="https://picsum.photos/100/100" alt="user-image"></img>
               </div>
               <div className="userInfoContainer">
-                <h2 style={{ fontWeight: 700 }}>{}</h2>
+                <h2 style={{ fontWeight: 700 }}>{props.post.title}</h2>
                 <div className="userStatusContainer">
                   <GlobalIcon />
                   <p>x ore</p>
