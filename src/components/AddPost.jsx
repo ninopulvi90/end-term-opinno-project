@@ -15,10 +15,10 @@ export default function AddPost() {
     };
 
     return (
-        <div className="flex bg-slate-800 text-white border-2">
+        <div className="flex bg-slate-800 text-white border-2 p-4">
             <div className="bg-cyan-500 rounded-full h-8 w-8 m-2"></div>
             <div className="flex flex-col w-11/12">
-                <div className="m-1">Nome Utente</div>
+                <div className="my-2">Nome Utente</div>
                 <div>
                     <input
                         type="text"
@@ -27,9 +27,9 @@ export default function AddPost() {
                         placeholder="Condividi i tuoi progressi"
                         className="bg-slate-800 border-b-2 w-11/12" />
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between mt-2">
                     <div className="flex justify-between">
-                        <div className="flex items-center ">
+                        <div className="flex items-center mt-2">
                             <div className="bg-cyan-500 rounded-full h-5 w-5 mr-2"></div>
 
                             <label
@@ -44,8 +44,8 @@ export default function AddPost() {
                             />
 
                         </div>
-                        <div className="flex items-center m-2">
-                            <div className="bg-cyan-500 rounded-full h-5 w-5 mr-1"></div>
+                        <div className="flex items-center mt-2 ml-2">
+                            <div className="bg-cyan-500 rounded-full h-5 w-5 mx-2"></div>
 
                             <label
                                 htmlFor="videoInput"
@@ -60,9 +60,9 @@ export default function AddPost() {
 
                         </div>
                     </div>
-                    <button 
-                    onClick={handleShareClick}
-                    className="bg-green-600 rounded-md p-1 text-white m-1">Condividi</button>
+                    <button
+                        onClick={handleShareClick}
+                        className="bg-green-600 rounded-md p-2 text-white mt-2">Condividi</button>
                 </div>
             </div>
         </div>
