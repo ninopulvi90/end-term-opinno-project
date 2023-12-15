@@ -19,7 +19,9 @@ img {
 
 .headerPostContainer,
 .headerPostContainer div,
-.userStatusContainer {
+.userStatusContainer,
+.commentsBar,
+.commentsBar div {
   display: flex;
 }
 
@@ -70,19 +72,21 @@ img {
   width: 100%;
 }
 
-/*ICONS-SVG*/
+/*COMMENTS*/
 
-#closeIcon {
-  padding: .2rem;
+.commentsBar{
+  border-top: 1px solid black;
+
+  justify-content: center;
+  gap: 3rem;
+
+}
+
+.commentsBar div {
+  display: flex;
+  margin: .5rem 0;
   cursor: pointer;
-  transition: transform .3s ease-in-out;
-  border-radius: 10rem;
-  /* background-color: transparent; */
 }
 
-#closeIcon:hover {
-  background-color: lightgray;
-  transform: scale(1.2);
-  /* fill: red; */
-  stroke: red;
-}
+
+
