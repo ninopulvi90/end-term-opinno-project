@@ -1,5 +1,12 @@
-function App() {
-  return <h1>Component Placeholder</h1>
-}
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-export default App
+export default function App() {
+  return <div className="flex justify-center">
+      <Router>
+        <Routes>
+        <Route path="/home" element={<Home />} />
+        </Routes>
+      </Router>
+  </div>
+}
