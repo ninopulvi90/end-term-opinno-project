@@ -15,7 +15,7 @@ export default function AddPost() {
     };
 
     return (
-        <div className="flex bg-slate-800 text-white border-2 p-4">
+        <div className="flex bg-white dark:bg-[#353535] dark:text-[#FFFFFF] border-2 p-4">
             <div className="bg-cyan-500 rounded-full h-8 w-8 m-2"></div>
             <div className="flex flex-col w-11/12">
                 <div className="my-2">Nome Utente</div>
@@ -25,7 +25,7 @@ export default function AddPost() {
                         value={inputText}
                         onChange={(e) => setInputText(e.target.value)}
                         placeholder="Condividi i tuoi progressi"
-                        className="bg-slate-800 border-b-2 w-11/12" />
+                        className="bg-white dark:bg-[#353535] border-b-2 w-11/12 palceholder-[#A4A4A4] text-[#404040] dark:text-[#FFFFFF]" />
                 </div>
                 <div className="flex justify-between mt-2">
                     <div className="flex justify-between">
@@ -34,7 +34,7 @@ export default function AddPost() {
 
                             <label
                                 htmlFor="imageInput"
-                                className="cursor-pointer hover:underline">Inserisci foto</label>
+                                className="cursor-pointer hover:underline dark:text-[#FFFFFF]">Inserisci foto</label>
                             <input
                                 id="imageInput"
                                 type="file"
@@ -49,7 +49,7 @@ export default function AddPost() {
 
                             <label
                                 htmlFor="videoInput"
-                                className="cursor-pointer hover:underline">Inserisci video</label>
+                                className="cursor-pointer hover:underline dark:text-[#FFFFFF]">Inserisci video</label>
                             <input
                                 id="videoInput"
                                 type="file"
@@ -62,7 +62,7 @@ export default function AddPost() {
                     </div>
                     <button
                         onClick={handleShareClick}
-                        className="bg-green-600 rounded-md p-2 text-white mt-2">Condividi</button>
+                        className="bg-[#006793] dark:bg-[#008ECB] rounded-md p-2 text-[#FFFFFF] mt-2">Condividi</button>
                 </div>
             </div>
         </div>
