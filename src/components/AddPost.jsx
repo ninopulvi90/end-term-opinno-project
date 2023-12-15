@@ -1,4 +1,6 @@
 import { useState } from "react";
+import CameraIcon from "../assets/CameraIcon";
+import PlayerIcon from "../assets/PlayerIcon";
 
 export default function AddPost() {
     const [inputText, setInputText] = useState('');
@@ -30,7 +32,9 @@ export default function AddPost() {
                 <div className="flex justify-between mt-2">
                     <div className="flex justify-between">
                         <div className="flex items-center mt-2">
-                            <div className="bg-cyan-500 rounded-full h-5 w-5 mr-2"></div>
+
+                            {/* <div className="bg-cyan-500 rounded-full h-5 w-5 mr-2"></div> */}
+                            {CameraIcon}
 
                             <label
                                 htmlFor="imageInput"
@@ -45,7 +49,8 @@ export default function AddPost() {
 
                         </div>
                         <div className="flex items-center mt-2 ml-2">
-                            <div className="bg-cyan-500 rounded-full h-5 w-5 mx-2"></div>
+                            {/* <div className="bg-cyan-500 rounded-full h-5 w-5 mx-2"></div> */}
+                            {PlayerIcon}
 
                             <label
                                 htmlFor="videoInput"
