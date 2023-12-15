@@ -2,7 +2,8 @@ import "./Home.css";
 import Sidebar from "../components/sidebar/Sidebar"
 import Header from "../components/header/Header";
 import Mission from "../components/Mission";
-import AddPost from "../components/AddPost"
+import AddPost from "../components/AddPost";
+import PostContainer from "../components/posts-container/PostContainer";
 
 export default function Home () {
   return (
@@ -17,10 +18,10 @@ export default function Home () {
           {" "}
           {/* wrapper */}
           <section className="w-full"><AddPost /></section>
-          <section>Post</section>
           <section>
             <Mission />
           </section>
+          <section><PostContainer /></section>
         </div>
       </div>
     </main>
