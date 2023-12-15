@@ -7,7 +7,7 @@ import PostContainer from "../components/posts-container/PostContainer";
 
 export default function Home () {
   return (
-    <main>
+    <main className="container">
       <div className="menu_laterale">
         <Sidebar />
 
