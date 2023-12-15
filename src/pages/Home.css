@@ -7,10 +7,10 @@ main{
     width: 100%;
 }
 
-.menu_laterale{
+/* .menu_laterale{
     border: 3px solid orange;
     width: 200px;
-}
+} */
 
 .centrale{
     display: flex;
