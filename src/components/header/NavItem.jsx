@@ -7,7 +7,7 @@ export default function NavItem({to, img}) {
     <Link to={to} className="group hover:scale-110 transition-all">
       <div className="flex flex-col justify-center items-center gap-1">
         <RoundedImg
-          size={16}
+          size={8}
           url={img}
           alt="placeholder"
         />

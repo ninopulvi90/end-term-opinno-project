@@ -7,7 +7,7 @@ export default function SearchBar({ placeholder, onChange }) {
         name="searchBar"
         id="searchBar"
         placeholder={placeholder}
-        className="text-slate-600 font-semibold bg-slate-300 border-2 border-slate-900 shadow-sm shadow-slate-900 p-4 pr-12 rounded-full focus-visible:outline-none focus-visible:bg-slate-100"
+        className="text-slate-600 font-semibold bg-slate-300 border-2 border-slate-900 shadow-sm shadow-slate-900 py-2 pl-4 pr-12 rounded-full focus-visible:outline-none focus-visible:bg-slate-100"
       />
       <SearchIcon />
     </div>
@@ -22,7 +22,7 @@ function SearchIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="#475569"
-      className="w-6 h-6 absolute right-4 bottom-4"
+      className="w-6 h-6 absolute right-4 bottom-[10px]"
     >
       <path
         strokeLinecap="round"

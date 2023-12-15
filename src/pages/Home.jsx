@@ -1,6 +1,8 @@
 import "./Home.css";
 import Sidebar from "../components/sidebar/Sidebar"
 import Header from "../components/header/Header";
+import Mission from "../components/Mission";
+import AddPost from "../components/AddPost"
 
 export default function Home () {
   return (
@@ -14,8 +16,11 @@ export default function Home () {
         <div className="wrapper">
           {" "}
           {/* wrapper */}
-          <section>Add Post</section>
+          <section className="w-full"><AddPost /></section>
           <section>Post</section>
+          <section>
+            <Mission />
+          </section>
         </div>
       </div>
     </main>
