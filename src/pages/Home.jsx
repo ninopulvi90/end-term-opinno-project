@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 
 export default function(){
     return (
-        <main>
+        <main className='container'>
             <div className="menu_laterale">
                 <div>Profile</div>
                 <div>Sidebar</div>

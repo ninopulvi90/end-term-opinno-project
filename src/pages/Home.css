@@ -1,7 +1,7 @@
 main{
     display: flex;
     flex-direction: row;
-    max-width: 1600px;
+    /* max-width: 1600px; */
     border: 3px solid blue;
     min-height: 100vh;
     width: 100%;
@@ -16,7 +16,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100vw - 200px);
+    width: 100%;
 }
 
 nav{
@@ -31,5 +31,5 @@ nav{
     align-items: center;
     border: 3px solid purple;
     width: 100%;
-    max-width: 1400px;
 }
+
