@@ -1,5 +1,6 @@
 import "./Home.css";
 import Sidebar from "../components/sidebar/Sidebar"
+import Header from "../components/header/Header";
 
 export default function Home () {
   return (
@@ -9,7 +10,7 @@ export default function Home () {
 
       </div>
       <div className="centrale">
-        <nav>Navbar</nav>
+        <Header />
         <div className="wrapper">
           {" "}
           {/* wrapper */}

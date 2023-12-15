@@ -16,14 +16,16 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100vw - 200px);
+    /* width: calc(100vw - 200px); */
+    border: 1px purple solid;
+    width: 100%;
 }
 
-nav{
+/* nav{
     border: 3px solid red;
     height: 80px;
     width: 100%;
-}
+} */
 
 .wrapper{
     display: flex;
