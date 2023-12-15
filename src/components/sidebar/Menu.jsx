@@ -38,7 +38,7 @@ function Menu() {
 
   return (
     <div className="bg-gray-100   shadow-md w-64 flex-col">
-      <h3 className="text-xl font-semibold mb-4 cursor-pointer">
+      <h3 className="text-xl text-center border font-semibold mb-4 cursor-pointer">
         Le tue missioni
       </h3>
 

@@ -10,7 +10,9 @@ function Menudue() {
 
   return (
     <div className="bg-gray-100   shadow-md w-64 flex-col">
-      <h3 className="text-xl font-semibold mb-4">Partecipa a nuove missioni</h3>
+      <h3 className="text-xl text-center border font-semibold mb-4">
+        Partecipa a nuove missioni
+      </h3>
       <ul className="flex-col space-x-4">
         <li
           className={`px-4 py-2 rounded-lg cursor-pointer ${
