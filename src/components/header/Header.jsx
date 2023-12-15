@@ -10,5 +10,6 @@ export default function Header() {
             <NavItem to="/" img={"https://picsum.photos/200"} />
         </nav>
         <SearchBar placeholder="Search..." />
+        
     </header>
 }
