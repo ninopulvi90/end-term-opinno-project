@@ -5,7 +5,7 @@ import RoundedImg from "../RoundedImg";
 export default function NavItem({to, img}) {
   return (
     <Link to={to} className="group hover:scale-110 transition-all">
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center gap-1">
         {/* <div className="w-16 h-16">
         <img src="https://picsum.photos/200" alt="placeholder" className="object-cover"/>
       </div> */}

@@ -1,5 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/header/Header";
+
 function App() {
-  return <h1>Component Placeholder</h1>
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={<div className="w-screen h-screen flex justify-center items-center">Ciao</div>}
+        />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
