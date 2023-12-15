@@ -5,10 +5,12 @@ import Footer from "../Footer";
 
 export default function Sidebar() {
   return (
-    <nav className="">
+    <nav className="flex flex-col gap-4 w-64">
       <Profile />
-      <Menu />
-      <Menudue />
+      <div className="rounded-2xl overflow-hidden p-4 bg-[#FAFAFA] dark:bg-[#353535]">
+        <Menu />
+        <Menudue />
+      </div>
       <Footer />
     </nav>
   );

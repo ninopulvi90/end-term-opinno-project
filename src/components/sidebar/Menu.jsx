@@ -37,19 +37,16 @@ function Menu() {
   };
 
   return (
-    <div className="bg-gray-100   shadow-md w-64 flex-col">
-      <h3 className="text-xl text-center border-y-2	 font-semibold mb-4 cursor-pointer">
+    <div className="shadow-md flex-col dark:text-white">
+      <h3 className="text-xl font-semibold my-4 cursor-pointer">
         Le tue missioni
       </h3>
-
-      <ul className="flex-col space-x-4">
+      <ul className="flex-col">
         <li
-          className={`px-4 py-2 rounded-lg cursor-pointer ${
-            activeClick === 1 ? "bg-blue-900" : ""
-          }`}
+          className={ `py-2 rounded-lg cursor-pointer` }
           onClick={() => cliccaMissione(1)}
         >
-          <p className="text-center text-sm font-semibold">Missione 1</p>
+          <p className="text-sm font-semibold">Missione 1</p>
           <div>
             {activeClick === 1 && (
               <div>
@@ -125,3 +122,8 @@ function Menu() {
 }
 
 export default Menu;
+
+
+// function Mission() {
+//   return <div></div>
+// }
