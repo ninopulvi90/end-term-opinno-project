@@ -4,7 +4,7 @@ import Error from "./pages/Error";
 
 
 export default function App() {
-  return <div className="flex justify-center">
+  return <div className="flex justify-center dark:bg-smp-black bg-smp-white bg-[url(https://picsum.photos/2000/1500)]">
       <Router>
         <Routes>
         <Route path="/" element={<Home />} />

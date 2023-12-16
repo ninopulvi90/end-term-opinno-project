@@ -30,7 +30,7 @@
 import { useState } from "react";
 // import "tailwindcss/tailwind.css";
 
-function Menu() {
+function Menu({title, missions}) {
   const [activeClick, setactiveClick] = useState(0);
 
   const cliccaMissione = (idMissione) => {
@@ -122,12 +122,12 @@ function Menu() {
   // );
 
   return (
-    <div className="shadow-md flex-col dark:text-white text-smp-black">
-      <h3 className="text-xl font-extrabold my-4 cursor-pointer">
-        {bundle.title}
+    <div className="flex-col dark:text-white text-smp-black">
+      <h3 className="text-xl font-extrabold cursor-pointer">
+        {title}
       </h3>
       <ul className="flex-col">
-        {bundle.missions.map((item) => {
+        {missions.map((item) => {
           return (
             <Mission
               key={item.missionId}
@@ -153,38 +153,7 @@ function Mission({ missionId, activeClick, onClick, body, key }) {
       onClick={onClick}
     >
       <p className="text-sm font-semibold">{"Missione " + missionId}</p>
-      {activeClick == missionId && <p>{body}</p>}
+      {activeClick == missionId && <p className="text-sm">{body}</p>}
     </li>
   );
 }
-
-const bundle = {
-  title: "sdfluh",
-  missions: [
-    {
-      missionId: 1,
-      body: `
-        E quando arriva la notte E resto sola con me La testa parte e
-        va in giro In cerca dei suoi perchè Né vincitori né vinti Si
-        esce sconfitti a metà La vita può allontanarci L amore
-        continuerà
-    `,
-    },
-    {
-      missionId: 2,
-      body: `
-        Spegni la luce anche se non ti va Restiamo al buio avvolti
-        solo dal suono della voce Al di là della follia che balla in
-        tutte le cose Due vite, guarda che disordine
-    `,
-    },
-    {
-      missionId: 3,
-      body: `
-        Ho visto lei che bacia lui Che bacia lei, che bacia me Mon
-        amour, amour, ma chi baci tu? Io farò una strage stasera Ballo
-        tra le lampade a sfera Lei piace sia a me che a te
-    `,
-    },
-  ],
-};
