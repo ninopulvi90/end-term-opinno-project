@@ -3,14 +3,14 @@
 #closeIcon {
   padding: .2rem;
   cursor: pointer;
-  transition: transform .3s ease-in-out;
+  transition: transform .2s ease-in-out;
   border-radius: 10rem;
   /* background-color: transparent; */
 }
 
 #closeIcon:hover {
-  background-color: lightgray;
+  background-color: #f3eded;
   transform: scale(1.2);
   /* fill: red; */
-  stroke: red;
+  stroke: #006793;
 }

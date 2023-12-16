@@ -3,29 +3,34 @@ import CloseIcon from './CloseIcon';
 import GlobalIcon from './GlobalIcon';
 import CommentIcon from './CommentIcon';
 import LikeIcon from './LikeIcon';
+
+import Comment from './Comment';
+
 import './post.css';
 import './close-icon.css';
 
-import gateway from '../../network/Gateway';
+import { getPostComments } from '../../network/Gateway';
 
 export default function Post(props) {
   const [comments, setComments] = useState([]);
-  // const [isCommentLoaded, setIsCommentLoaded] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
   const [isPostOpened, setIsPostOpened] = useState(true);
 
   useEffect(() => {
- 
-    gateway.getPostComments(setComments, props.post.id);
-    console.log(comments);
-  },[]);
-  // }, [isCommentLoaded]);
+    if (selectedPost) {
+      getPostComments(selectedPost)
+        .then((data) => setComments(data))
+        .catch((error) => {
+          throw new Error(error);
+        });
+    }
+  }, [selectedPost]);
 
-  const showDetail = function (index) {
+  const showComments = function (index) {
     setSelectedPost(index);
   };
 
-  const closeDetail = () => {
+  const closeComments = () => {
     setSelectedPost(null);
   };
 
@@ -33,17 +38,10 @@ export default function Post(props) {
     setIsPostOpened(false);
   };
 
-  // const loadComments = () => {
-  //   setIsCommentLoaded(true);
-  // };
-
   return (
     <>
       {isPostOpened && (
-        <li
-          onClick={() => showDetail(props.post.id)}
-          className="mainPostContainer"
-        >
+        <li className="mainPostContainer">
           <div className="headerPostContainer">
             <div>
               <div className="imgRoundedContainer big">
@@ -66,29 +64,32 @@ export default function Post(props) {
           <div className="bodyPostContainer">
             <p>{props.post.body}</p>
 
-            {selectedPost === props.post.id && (
-              <div onClickCapture={closeDetail}>
-                <img
-                  src={`https://picsum.photos/id/${props.post.id}/800/600`}
-                  alt="post-image"
-                ></img>
-              </div>
-            )}
+            <div onClickCapture={closeComments}>
+              <img
+                src={`https://picsum.photos/id/${props.post.id}/800/600`}
+                alt="post-image"
+              ></img>
+            </div>
           </div>
           <div className="commentsBar">
-            <LikeIcon />
-            {/* <div onClickCapture={loadComments}> */}
+            <div>
+              <LikeIcon />
+            </div>
+            <div onClick={() => showComments(props.post.id)}>
               <CommentIcon />
-            {/* </div> */}
+            </div>
           </div>
 
           <ul className="comments">
-            {/* {isCommentLoaded &&
+            <div className="className-container" onClick={closeComments}>
+              <p>Mostra meno</p>
+            </div>
+            {selectedPost === props.post.id &&
               comments.map((comment, index) => (
                 <li key={index}>
-                  <p>{comment}</p>
+                  <Comment comment={comment} />
                 </li>
-              ))} */}
+              ))}
           </ul>
         </li>
       )}
