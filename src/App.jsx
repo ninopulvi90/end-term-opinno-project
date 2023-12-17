@@ -1,6 +1,7 @@
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Error from "./pages/Error";
+import RightSidebar from "./components/right-sidebar/RightSidebar";
 
 
 export default function App() {
@@ -9,6 +10,9 @@ export default function App() {
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
+        
+        <Route path="/side" element={<RightSidebar />} />
+
         </Routes>
       </Router>
   </div>
