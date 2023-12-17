@@ -15,7 +15,8 @@ module.exports = {
         "smp-shadow": "#00000029"
       },
       boxShadow: {
-        "smp": "2px 2px 3px rbga(0, 0, 0, 0.16)",
+        "smp-nav": "2px 2px 3px black",
+        "smp-card": "0px 1px 16px black",
       }
     },
   },

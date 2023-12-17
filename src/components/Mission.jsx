@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import CloseIcon from '../components/post/CloseIcon';
+import CloseIcon from '../components/close-btn/CloseIcon';
 import NextIcon from '../components/post/NextIcon';
-import '../components/post/close-icon.css';
+import '../components/close-btn/CloseIcon';
 import '../components/post/next-icon.css';
 
 const imageUrls = [

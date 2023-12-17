@@ -37,10 +37,10 @@ export default function Post(props) {
   return (
     <>
       {isPostOpened && (
-        <div className="mainPostContainer">
-          <div className="headerPostContainer">
+        <li className="mainPostContainer dark:bg-smp-light-gray dark:text-white text-smp-dark-gray bg-smp-white">
+          <div className="headerPostContainer ">
             <div>
-              <div className="imgRoundedContainer big">
+              <div className="imgRoundedContainer bigMichele">
                 <img
                   src={`https://picsum.photos/id/${props.post.id + 60}/800/600`}
                   alt="user-image"
@@ -60,7 +60,7 @@ export default function Post(props) {
             </div>
           </div>
 
-          <div className="bodyPostContainer">
+          <div className="bodyPostContainer ">
             <p>{props.post.body}</p>
 
             <div onClickCapture={closeComments}>
@@ -90,7 +90,7 @@ export default function Post(props) {
                 </li>
               ))}
           </ul>
-        </div>
+        </li>
       )}
     </>
   );

@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
-import Post from '../post/Post';
-import { getPosts, getUsers } from '../../network/Gateway';
-import LoadingCircle from '../loading-circle/LoadingCircle';
+/* eslint-disable react/jsx-key */
+import { useEffect, useState } from "react";
+import Post from "../post/Post";
+import { getPosts, getUsers } from "../../network/Gateway";
+import LoadingCircle from "../loading-circle/LoadingCircle";
 
 ////import * as Gateway from '../../network/Gateway';
 
@@ -22,18 +23,14 @@ export default function PostContainer() {
   }, []);
 
   return (
-    <ul>
+    <ul className="flex flex-col gap-4">
       {!posts ? (
         <LoadingCircle />
       ) : (
         posts.slice(0, 9).map((post, index) => {
           post.author = postAuthors[index];
 
-          return (
-            <li key={post.id}>
-              <Post post={post} />
-            </li>
-          );
+          return <Post post={post} />;
         })
       )}
     </ul>
