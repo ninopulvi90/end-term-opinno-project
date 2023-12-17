@@ -29,9 +29,9 @@ export default function Mission() {
     }
 
     return (
-        <div className="relative rounded overflow-hidden  ">
-            <img src={imageUrls[currentIndex]} className="w-full h-full rounded-lg" />
-            <div className="absolute top-0 left-0 w-full text-center p-4 text-[#FFFFFF] font-extrabold text-4xl transform -skew-y-6">
+        <div className="relative overflow-hidden rounded-2xl">
+            <img src={imageUrls[currentIndex]} className="w-full h-full rounded-2xl" />
+            <div className="absolute top-3 left-0 w-full text-center p-4 text-[#FFFFFF] font-extrabold text-5xl transform -skew-y-6 drop-shadow-[0_15px_15px_rgba(0,0,0,0.75)] hover:text-6xl">
                 Missione in partenza!
             </div>
             <button
