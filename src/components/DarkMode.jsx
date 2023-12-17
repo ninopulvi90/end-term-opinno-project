@@ -34,7 +34,7 @@ function MyIcon({ dark }) {
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="w-6 h-6 stroke-current dark:text-slate-500 text-slate-800"
+    className="w-6 h-6 text-white"
   >
     <path
       strokeLinecap="round"
@@ -58,7 +58,7 @@ function SwitchButton({ checked }) {
           onChange={() => {}}
           className="sr-only peer"
         />
-        <div className="w-11 h-6 dark:bg-gray-200 bg-slate-900 peer-focus:outline-none rounded-full peer dark:bg-slate-500 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+        <div className="w-11 h-6 bg-slate-900 peer-focus:outline-none rounded-full peer dark:bg-slate-500 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
       </label>
     </>
   );
