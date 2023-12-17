@@ -37,7 +37,7 @@ export default function Post(props) {
   return (
     <>
       {isPostOpened && (
-        <li className="mainPostContainer dark:bg-smp-light-gray dark:text-white text-smp-dark-gray bg-smp-white">
+        <li className="mainPostContainer dark:bg-smp-light-gray dark:text-white text-smp-dark-gray bg-smp-white rounded-2xl">
           <div className="headerPostContainer ">
             <div>
               <div className="imgRoundedContainer bigMichele">
