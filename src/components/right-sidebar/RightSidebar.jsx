@@ -28,7 +28,7 @@ export default function RightSidebar() {
       // bg-[url('src/assets/sfndoAz.png')] dark:bg-[url('src/assets/sfondoScuro.png')]
       >
         <AttualeMissione/>
-        <h1 className="text-xl font-bold mt-3 ml-2">Followers</h1>
+        <h1 className="text-xl font-bold mt-3 ml-2 dark:text-white">Followers</h1>
         {followers.slice(0,8).map((follower, index) => (
         <div key={index}>
             <Followers follower = {follower}/>

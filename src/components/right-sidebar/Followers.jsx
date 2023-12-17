@@ -14,7 +14,7 @@ export default function Followers(props){
         />
             <div className="flex flex-row">
                 <div className="ml-2">
-                    <h2 className="text-base font-semibold h-12 w-36 leading-[48px]">{props.follower.name}</h2>
+                    <h2 className="text-base font-semibold h-12 w-36 leading-[48px] dark:text-white">{props.follower.name}</h2>
                 </div>
             </div>
         </div>

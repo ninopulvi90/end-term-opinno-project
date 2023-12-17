@@ -10,8 +10,8 @@ export default function AttualeMissione(){
                 />
             <div className="flex flex-row">
                 <div className="ml-2">
-                    <h2 className="text-lg font-semibold">Missione attuale</h2>
-                    <h2>CityLife</h2>
+                    <h2 className="text-lg font-semibold dark:text-white">Missione attuale</h2>
+                    <h2 className="dark:text-white">CityLife</h2>
                 </div>
             </div>
         </div>
