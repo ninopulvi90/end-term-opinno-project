@@ -1,0 +1,16 @@
+.commentBtn {
+  transition: transform .2s ease-in-out;
+}
+
+.commentBtn:hover {
+
+  transform: scale(1.05);
+}
+
+.commentBtn:hover svg {
+  stroke: #006793;
+}
+
+.commentBtn:hover p {
+  color: #006793;
+}

@@ -1,0 +1,18 @@
+#likeBtn {
+  transition: transform .2s ease-in-out;
+}
+
+#likeBtn:hover {
+  transform: scale(1.05);
+}
+
+#likeBtn:hover svg,
+.activeButton svg
+ {
+  stroke: #006793;
+}
+
+#likeBtn:hover p,
+.activeButton p{
+  color: #006793;
+}

@@ -1,0 +1,64 @@
+.comments{
+  border-top: 1px solid black;
+}
+
+.className-container {
+  position: relative;
+}
+
+.className-container p{
+  position: absolute;
+  left: 85%;
+  top: 0;
+  margin: 1rem 1rem 0 0;
+  text-align: end;
+  transition: transform .2s ease;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.className-container:hover p{
+  transform: scale(1.03);
+  color: #006793;
+} 
+
+.comments li:nth-of-type(1){
+  margin-top: 4rem;
+}
+
+.comments li {
+  width: 80%;
+  margin: 0 15% 2rem 5%;
+  border-radius: 16px;
+  background-color: #fafafa;
+  box-shadow: 1px 1px 2px rgb(0, 0, 0, 0.3);
+}
+
+.comment-container{
+  margin-top: 3rem;
+}
+
+.comment-container h2{
+  font-weight: 700;
+}
+
+.comment-header{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.comment-header div{
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+}
+
+.comment-container h2{
+  margin-left: 3rem;
+}
+
+.comment-container p
+{
+  padding: 1rem;
+}

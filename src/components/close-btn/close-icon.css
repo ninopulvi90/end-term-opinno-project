@@ -1,0 +1,12 @@
+#closeIcon {
+  padding: .2rem;
+  cursor: pointer;
+  transition: transform .2s ease-in-out;
+  border-radius: 10rem;
+}
+
+#closeIcon:hover {
+  background-color: #f3eded;
+  transform: scale(1.2);
+  stroke: #006793;
+}

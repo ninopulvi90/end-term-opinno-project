@@ -1,28 +1,24 @@
 import { useEffect, useState } from 'react';
-import CloseIcon from './CloseIcon';
-import GlobalIcon from './GlobalIcon';
-import CommentIcon from './CommentIcon';
-import LikeIcon from './LikeIcon';
+import CloseIcon from '../close-btn/CloseIcon';
+import GlobalIcon from '../GlobalIcon';
+import CommentBtn from '../comment-btn/CommentBtn';
+import LikeBtn from '../like-btn/LikeBtn';
 
-import Comment from './Comment';
+import Comment from '../comment/Comment';
 
 import './post.css';
-import './close-icon.css';
+import '../close-btn/close-icon.css';
 
 import { getPostComments } from '../../network/Gateway';
 
 export default function Post(props) {
   const [comments, setComments] = useState([]);
-  const [selectedPost, setSelectedPost] = useState(null);
-  const [isPostOpened, setIsPostOpened] = useState(true);
+  const [selectedPost, setSelectedPost] = useState(null); //gestione per apertura commenti
+  const [isPostOpened, setIsPostOpened] = useState(true); //gestione closeBtn
 
   useEffect(() => {
     if (selectedPost) {
-      getPostComments(selectedPost)
-        .then((data) => setComments(data))
-        .catch((error) => {
-          throw new Error(error);
-        });
+      getPostComments(selectedPost).then((resp) => setComments(resp.data));
     }
   }, [selectedPost]);
 
@@ -41,14 +37,17 @@ export default function Post(props) {
   return (
     <>
       {isPostOpened && (
-        <li className="mainPostContainer">
+        <div className="mainPostContainer">
           <div className="headerPostContainer">
             <div>
               <div className="imgRoundedContainer big">
-                <img src="https://picsum.photos/100/100" alt="user-image"></img>
+                <img
+                  src={`https://picsum.photos/id/${props.post.id + 60}/800/600`}
+                  alt="user-image"
+                ></img>
               </div>
               <div className="userInfoContainer">
-                <h2 style={{ fontWeight: 700 }}>{props.post.title}</h2>
+                <h2 style={{ fontWeight: 700 }}>{props.post.author.name}</h2>
                 <div className="userStatusContainer">
                   <GlobalIcon />
                   <p>x ore</p>
@@ -66,17 +65,17 @@ export default function Post(props) {
 
             <div onClickCapture={closeComments}>
               <img
-                src={`https://picsum.photos/id/${props.post.id}/800/600`}
+                src={`https://picsum.photos/id/${props.post.id + 30}/800/600`}
                 alt="post-image"
               ></img>
             </div>
           </div>
           <div className="commentsBar">
             <div>
-              <LikeIcon />
+              <LikeBtn />
             </div>
             <div onClick={() => showComments(props.post.id)}>
-              <CommentIcon />
+              <CommentBtn />
             </div>
           </div>
 
@@ -91,7 +90,7 @@ export default function Post(props) {
                 </li>
               ))}
           </ul>
-        </li>
+        </div>
       )}
     </>
   );

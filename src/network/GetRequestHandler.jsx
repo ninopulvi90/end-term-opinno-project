@@ -2,23 +2,25 @@ import Axios from 'axios';
 
 const defaultErrorHandler = (error) => {
   if (error.response) {
-    console.error('Errore HTTP:', error.response.status, error.response.data);
-
     if (error.response.status === 404) {
-      console.log('ERRORE 404 - Pagina non trovata');
-      //setErrore(true);
+      throw new Error('ERRORE 404 - Pagina non trovata');
+    } else {
+      throw new Error(
+        `ERRORE HTTP: ${error.response.status}${error.response.data}`
+      );
     }
   } else if (error.request) {
-    console.error('ERROR: Qualcosa è andato storto durante l\'invio della richiesta', error.request);
+    throw new Error(
+      `ERROR: Qualcosa è andato storto durante l'invio della richiesta - ${error.request}`
+    );
   } else {
-    console.error(
-      'Errore durante la configurazione della richiesta:',
-      error.message
+    throw new Error(
+      `ERROR: Errore durante la configurazione della richiesta: - ${error.message}`
     );
   }
 };
 
- const getData = (baseUrl, endPoint, id, errorHandler = defaultErrorHandler) => {
+const getData = (baseUrl, endPoint, id, errorHandler = defaultErrorHandler) => {
   let url = `${baseUrl}${endPoint}`;
 
   if (id) {
@@ -28,7 +30,7 @@ const defaultErrorHandler = (error) => {
   }
 
   return Axios.get(url)
-    .then((response) => response.data)
+    .then((response) => response)
     .catch((error) => {
       errorHandler(error);
     });
