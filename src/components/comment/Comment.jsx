@@ -1,4 +1,4 @@
-import './post.css';
+import '../post/post.css';
 import './comment.css';
 
 export default function Comment(props) {
@@ -7,7 +7,7 @@ export default function Comment(props) {
     <div className="comment-container">
       <div className="comment-header">
         <div className="imgRoundedContainer small">
-          <img src="https://picsum.photos/100/100"></img>
+          <img src={`https://picsum.photos/id/${props.comment.id + 90}/100/100`}></img>
         </div>
         <h2>{props.comment.name}</h2>
       </div>

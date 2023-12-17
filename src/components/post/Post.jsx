@@ -1,29 +1,32 @@
 import { useEffect, useState } from 'react';
-import CloseIcon from './CloseIcon';
-import GlobalIcon from './GlobalIcon';
-import CommentIcon from './CommentIcon';
-import LikeIcon from './LikeIcon';
-import './post.css';
-import './close-icon.css';
+import CloseIcon from '../close-btn/CloseIcon';
+import GlobalIcon from '../GlobalIcon';
+import CommentBtn from '../comment-btn/CommentBtn';
+import LikeBtn from '../like-btn/LikeBtn';
 
-import gateway from '../../network/Gateway';
+import Comment from '../comment/Comment';
+
+import './post.css';
+import '../close-btn/close-icon.css';
+
+import { getPostComments } from '../../network/Gateway';
 
 export default function Post(props) {
-  // const [comments, setComments] = useState([]);
-  // const [isCommentLoaded, setIsCommentLoaded] = useState(false);
-  const [selectedPost, setSelectedPost] = useState(null);
-  const [isPostOpened, setIsPostOpened] = useState(true);
+  const [comments, setComments] = useState([]);
+  const [selectedPost, setSelectedPost] = useState(null); //gestione per apertura commenti
+  const [isPostOpened, setIsPostOpened] = useState(true); //gestione closeBtn
 
-  // useEffect(() => {
-  //   gateway.getPostComments(setComments, props.post.id);
-  //   console.log(comments);
-  // }, [isCommentLoaded]);
+  useEffect(() => {
+    if (selectedPost) {
+      getPostComments(selectedPost).then((resp) => setComments(resp.data));
+    }
+  }, [selectedPost]);
 
-  const showDetail = function (index) {
+  const showComments = function (index) {
     setSelectedPost(index);
   };
 
-  const closeDetail = () => {
+  const closeComments = () => {
     setSelectedPost(null);
   };
 
@@ -31,24 +34,20 @@ export default function Post(props) {
     setIsPostOpened(false);
   };
 
-  // const loadComments = () => {
-  //   setIsCommentLoaded(true);
-  // };
-
   return (
     <>
       {isPostOpened && (
-        <li
-          onClick={() => showDetail(props.post.id)}
-          className="mainPostContainer"
-        >
+        <div className="mainPostContainer">
           <div className="headerPostContainer">
             <div>
               <div className="imgRoundedContainer big">
-                <img src="https://picsum.photos/100/100" alt="user-image"></img>
+                <img
+                  src={`https://picsum.photos/id/${props.post.id + 60}/800/600`}
+                  alt="user-image"
+                ></img>
               </div>
               <div className="userInfoContainer">
-                <h2 style={{ fontWeight: 700 }}>{}</h2>
+                <h2 style={{ fontWeight: 700 }}>{props.post.author.name}</h2>
                 <div className="userStatusContainer">
                   <GlobalIcon />
                   <p>x ore</p>
@@ -64,31 +63,34 @@ export default function Post(props) {
           <div className="bodyPostContainer">
             <p>{props.post.body}</p>
 
-            {selectedPost === props.post.id && (
-              <div onClickCapture={closeDetail}>
-                <img
-                  src={`https://picsum.photos/id/${props.post.id}/800/600`}
-                  alt="post-image"
-                ></img>
-              </div>
-            )}
+            <div onClickCapture={closeComments}>
+              <img
+                src={`https://picsum.photos/id/${props.post.id + 30}/800/600`}
+                alt="post-image"
+              ></img>
+            </div>
           </div>
           <div className="commentsBar">
-            <LikeIcon />
-            {/* <div onClickCapture={loadComments}> */}
-              <CommentIcon />
-            {/* </div> */}
+            <div>
+              <LikeBtn />
+            </div>
+            <div onClick={() => showComments(props.post.id)}>
+              <CommentBtn />
+            </div>
           </div>
 
           <ul className="comments">
-            {/* {isCommentLoaded &&
+            <div className="className-container" onClick={closeComments}>
+              <p>Mostra meno</p>
+            </div>
+            {selectedPost === props.post.id &&
               comments.map((comment, index) => (
                 <li key={index}>
-                  <p>{comment}</p>
+                  <Comment comment={comment} />
                 </li>
-              ))} */}
+              ))}
           </ul>
-        </li>
+        </div>
       )}
     </>
   );

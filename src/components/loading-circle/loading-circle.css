@@ -1,0 +1,38 @@
+.circle-loading-container{
+  width: 50rem;
+  box-shadow: 2px 2px 4px #e2dede;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.circle-loading {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.circle-loading-spinner {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border: 5px solid #3498db;
+  border-radius: 50%;
+  border-top: 5px solid transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
