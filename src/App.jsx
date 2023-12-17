@@ -10,9 +10,6 @@ export default function App() {
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
-        
-        <Route path="/side" element={<RightSidebar />} />
-
         </Routes>
       </Router>
   </div>
