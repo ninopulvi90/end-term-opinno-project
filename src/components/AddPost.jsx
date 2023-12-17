@@ -17,7 +17,7 @@ export default function AddPost() {
     };
 
     return (
-        <div className="flex bg-white dark:bg-[#353535] dark:text-[#FFFFFF] border-2 p-4">
+        <div className="flex bg-white dark:bg-[#353535] dark:text-[#FFFFFF] rounded-2xl p-4">
             <div className="bg-cyan-500 rounded-full h-8 w-8 m-2"></div>
             <div className="flex flex-col w-11/12">
                 <div className="my-2">Nome Utente</div>
