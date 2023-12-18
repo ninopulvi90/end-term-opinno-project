@@ -19,7 +19,7 @@ export default function CommentBtn() {
         />
       </svg>
 
-      <p>commenta</p>
+      <p>Commenti</p>
     </div>
   );
 }
