@@ -10,24 +10,13 @@ function Profile() {
           src="src\assets\icons8-senza-plastica-32.png"
           alt="img logo"
         ></img>
-        {/* <RoundedImg
-          size="10"
-          alt="Profile Pic"
-          url="src\assets\icons8-senza-plastica-32.png"
-        /> */}
-
         <h1 className="text-white font-bold text-xl">Save Me Please</h1>
       </div>
       <div className="flex items-center gap-6">
-        {/* <img
-          className="h-20 w-20 rounded-full mx-auto object-cover"
-          src="src\assets\img.jpg"
-          alt="img utente"
-        /> */}
         <RoundedImg
           size="16"
           alt="Profile Pic"
-          url="https://picsum.photos/200"
+          url="https://picsum.photos/id/64/600"
         />
         <h2 className="text-lg font-semibold text-white">Federica Tommasone</h2>
       </div>
