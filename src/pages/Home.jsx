@@ -4,6 +4,7 @@ import Header from "../components/header/Header";
 import Mission from "../components/Mission";
 import AddPost from "../components/AddPost";
 import PostContainer from "../components/posts-container/PostContainer";
+import RightSidebar from "../components/right-sidebar/RightSidebar";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         </div>
         <div className="centrale">
           <Header />
-          <div className="wrapper p-8 pr-0 gap-4">
+          <div className="wrapper p-4 pr-0 gap-4">
             {/* wrapper */}
             <section className="w-full">
               <AddPost />
@@ -26,6 +27,9 @@ export default function Home() {
               <PostContainer />
             </section>
           </div>
+        </div>
+        <div className="ml-4">
+          <RightSidebar/>
         </div>
       </main>
     </div>
