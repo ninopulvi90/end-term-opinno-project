@@ -8,7 +8,7 @@ function Profile() {
         <img
           className="h-12 w-14 object-cover"
           src="src\assets\icons8-senza-plastica-32.png"
-          alt="img utente"
+          alt="img logo"
         ></img>
         {/* <RoundedImg
           size="10"
