@@ -20,13 +20,24 @@ const defaultErrorHandler = (error) => {
   }
 };
 
-const getData = (baseUrl, endPoint, id, errorHandler = defaultErrorHandler) => {
+const getData = (
+  baseUrl,
+  endPoint,
+  id,
+  idFor,
+  endPoint2,
+  errorHandler = defaultErrorHandler
+) => {
   let url = `${baseUrl}${endPoint}`;
 
-  if (id) {
+  if (idFor === 'Comments') {
     console.log('ID => ' + id);
     url = url + `?postId=${id}`;
     console.log('URL => ' + url);
+  } else if (idFor === 'Posts') {
+    url = url + `/${id}${endPoint2}`;
+  } else if (idFor === 'Users') {
+    url = url + `/${id}`;
   }
 
   return Axios.get(url)

@@ -9,12 +9,25 @@ import Comment from '../comment/Comment';
 import './post.css';
 import '../close-btn/close-icon.css';
 
-import { getPostComments } from '../../network/Gateway';
+import { getUserById, getPostComments } from '../../network/Gateway';
 
 export default function Post(props) {
+  const [user, setUser] = useState({});
   const [comments, setComments] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null); //gestione per apertura commenti
   const [isPostOpened, setIsPostOpened] = useState(true); //gestione closeBtn
+
+  useEffect(() => {
+    const getUser = async () => {
+      const resp1 = await getUserById(props.post.userId);
+
+      setUser(resp1.data);
+    };
+
+    console.log(props.post.userId);
+
+    getUser();
+  }, [props.post.userId]);
 
   useEffect(() => {
     if (selectedPost) {
@@ -42,12 +55,14 @@ export default function Post(props) {
             <div>
               <div className="imgRoundedContainer big">
                 <img
-                  src={`https://picsum.photos/id/${props.post.id + 60}/800/600`}
+                  src={`https://picsum.photos/id/${
+                    user.id + 60
+                  }/800/600`}
                   alt="user-image"
                 ></img>
               </div>
               <div className="userInfoContainer">
-                <h2 style={{ fontWeight: 700 }}>{props.post.author.name}</h2>
+                <h2 style={{ fontWeight: 700 }}>{user.name}</h2>
                 <div className="userStatusContainer">
                   <GlobalIcon />
                   <p>x ore</p>

@@ -1,24 +1,21 @@
 import { useEffect, useState } from 'react';
 import Post from '../post/Post';
-import { getPosts, getUsers } from '../../network/Gateway';
+import { getPosts } from '../../network/Gateway';
 import LoadingCircle from '../loading-circle/LoadingCircle';
-
-////import * as Gateway from '../../network/Gateway';
 
 export default function PostContainer() {
   const [posts, setPosts] = useState(null);
-  //const [isRequestSent, setRequestSent] = useState(false);
-  const [postAuthors, setPostAuthors] = useState(null);
 
   useEffect(() => {
-    const getRequest = async () => {
-      const [resp1, resp2] = await Promise.all([getPosts(), getUsers()]);
+    const getData = async () => {
+      const resp1 = await getPosts();
+
+      console.log(resp1.data);
 
       setPosts(resp1.data);
-      setPostAuthors(resp2.data);
     };
 
-    getRequest();
+    getData();
   }, []);
 
   return (
@@ -26,15 +23,11 @@ export default function PostContainer() {
       {!posts ? (
         <LoadingCircle />
       ) : (
-        posts.slice(0, 9).map((post, index) => {
-          post.author = postAuthors[index];
-
-          return (
-            <li key={post.id}>
-              <Post post={post} />
-            </li>
-          );
-        })
+        posts.map((post, index)=>
+          <li key={index}>
+            <Post post={post} />
+          </li>
+        )
       )}
     </ul>
   );
