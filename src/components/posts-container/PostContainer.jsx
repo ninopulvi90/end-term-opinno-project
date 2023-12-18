@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { useEffect, useState } from 'react';
 import Post from '../post/Post';
 import { getPosts } from '../../network/Gateway';
