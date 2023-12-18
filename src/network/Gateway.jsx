@@ -16,3 +16,7 @@ export const getUsers = (errorHandler) =>
   
 export const getUserById = (id, errorHandler) =>
   getData(JSON_PLACEHOLDER_BASE_URL, '/users', id, 'Users', null, errorHandler);
+  
+export const getTodos = (id, errorHandler) =>
+  getData(JSON_PLACEHOLDER_BASE_URL, '/todos', null, null, null, errorHandler);
+

@@ -1,5 +1,5 @@
 .circle-loading-container{
-  width: 50rem;
+  width: 100%;
   box-shadow: 2px 2px 4px #e2dede;
   display: flex;
   flex-direction: column;

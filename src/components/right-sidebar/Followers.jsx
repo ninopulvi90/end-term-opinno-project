@@ -1,8 +1,6 @@
 import RoundedImg from "../RoundedImg";
 
 export default function Followers(props) {
-  console.log(props.follower.name);
-
   return (
     <div className="flex flex-row rounded-2xl overflow-hidden px-4 py-2 bg-smp-white dark:bg-smp-light-gray shadow-lg shadow-smp-shadow">
       <RoundedImg
