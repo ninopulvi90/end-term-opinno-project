@@ -1,15 +1,17 @@
-import { useEffect, useState } from 'react';
-import CloseIcon from '../close-btn/CloseIcon';
-import GlobalIcon from '../GlobalIcon';
-import CommentBtn from '../comment-btn/CommentBtn';
-import LikeBtn from '../like-btn/LikeBtn';
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
+import CloseIcon from "../close-btn/CloseIcon";
+import GlobalIcon from "../GlobalIcon";
+import CommentBtn from "../comment-btn/CommentBtn";
+import LikeBtn from "../like-btn/LikeBtn";
 
-import Comment from '../comment/Comment';
+import Comment from "../comment/Comment";
 
-import './post.css';
-import '../close-btn/close-icon.css';
+import "./post.css";
+import "../close-btn/close-icon.css";
 
-import { getUserById, getPostComments } from '../../network/Gateway';
+import { getUserById, getPostComments } from "../../network/Gateway";
+import PostCta from "../post-cta/PostCta";
 
 export default function Post(props) {
   const [user, setUser] = useState({});
@@ -55,9 +57,7 @@ export default function Post(props) {
             <div>
               <div className="imgRoundedContainer bigMichele">
                 <img
-                  src={`https://picsum.photos/id/${
-                    user.id + 60
-                  }/800/600`}
+                  src={`https://picsum.photos/id/${user.id + 60}/800/600`}
                   alt="user-image"
                 ></img>
               </div>
@@ -86,12 +86,15 @@ export default function Post(props) {
             </div>
           </div>
           <div className="commentsBar">
-            <div>
-              <LikeBtn />
-            </div>
-            <div onClick={() => showComments(props.post.id)}>
-              <CommentBtn />
-            </div>
+            <PostCta
+              innerText="Mi piace"
+              iconType="like"
+            />
+            <PostCta
+              innerText="Commenti"
+              iconType="comments"
+              onClick={() => showComments(props.post.id)}
+            />
           </div>
 
           <ul className="comments">
