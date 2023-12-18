@@ -23,7 +23,6 @@ export default function AddPost() {
                 className={"rounded-full overflow-hidden shadow-sm shadow-slate-900/50 bg-smp-white dark:bg-smp-black m-2"} >
                 <img src={'https://picsum.photos/id/64/100/105'} alt={'profile image'} className="object-cover w-full object-center" />
             </div>
-            {/* <div className="bg-cyan-500 rounded-full h-8 w-8 m-2"></div> */}
             <div className="flex flex-col w-11/12">
                 <div className="my-2">Federica Tommasone</div>
                 <div>
@@ -38,7 +37,6 @@ export default function AddPost() {
                     <div className="flex justify-between">
                         <div className="flex items-center mt-2">
 
-                            {/* <div className="bg-cyan-500 rounded-full h-5 w-5 mr-2"></div> */}
                             {CameraIcon}
 
                             <label
@@ -54,7 +52,6 @@ export default function AddPost() {
 
                         </div>
                         <div className="flex items-center mt-2 ml-2">
-                            {/* <div className="bg-cyan-500 rounded-full h-5 w-5 mx-2"></div> */}
                             {PlayerIcon}
 
                             <label
